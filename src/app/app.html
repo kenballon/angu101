@@ -1,0 +1,15 @@
+<main>
+  <mat-toolbar class="shadow-2" color="secondary">
+    <button mat-icon-button aria-label="Menu" (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar>
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" class="sidenav-custom" [style.width.px]="250">
+      <app-custom-sidenav></app-custom-sidenav>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet>hello</router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</main>

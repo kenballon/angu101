@@ -1,0 +1,56 @@
+
+
+@use '@angular/material' as mat;
+
+html {
+  @include mat.theme((
+    color: (
+      primary: mat.$magenta-palette,
+      tertiary: mat.$violet-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+  ));
+}
+
+body {
+
+  color-scheme: light;
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+
+  // Reset the user agent margin.
+  margin: 0;
+}
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.shadow-2{
+ @include mat.elevation(2);
+}
+
+
+mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 99999;
+}
+
+mat-sidenav-container {
+  height: calc(100vh - 64px);
+}
+
+.mat-drawer.mat-drawer-opened.mat-drawer-opened{
+  background-color: rgb(228, 228, 228);
+  border-radius: 0;
+  padding-block:2rem;
+  padding-inline: 1rem;
+}
+
+mat-sidenav-content {
+  padding: 16px;
+}
