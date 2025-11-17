@@ -1,12 +1,37 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, signal, Signal } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+
+export type MenuItem = {
+  icon: string;
+  label: string;
+  route: string;
+};
 
 @Component({
   selector: 'app-custom-sidenav',
-  imports: [MatIconModule],
+  imports: [CommonModule,MatIconModule, MatListModule],
   templateUrl: './custom-sidenav.html',
-  styleUrl: './custom-sidenav.scss',
+  styleUrls: ['./custom-sidenav.scss'],
 })
-export class CustomSidenav {
 
+export class CustomSidenav {
+  menuItems = signal<MenuItem[]>([
+    {
+      icon: 'dashboard',
+      label: 'Dashboard',
+      route: '/dashboard'
+    },
+    {
+      icon: 'people',
+      label: 'Users',
+      route: '/users'
+    },
+    {
+      icon: 'settings',
+      label: 'Settings',
+      route: '/settings'
+    }
+  ]);
 }

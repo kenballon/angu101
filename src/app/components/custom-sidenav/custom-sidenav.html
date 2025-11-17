@@ -1,7 +1,10 @@
-<div>
-    <mat-icon>apps</mat-icon>
-    <mat-icon>
-        space_dashboard
-    </mat-icon>
-    <span class="title">My Custom Sidenav</span>
+<div class="menu-toggle-wrapper">
+    <mat-nav-list>
+        @for (item of menuItems(); track item) {
+        <a mat-list-item>
+            <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+            <span matListItemTitle>{{ item.label }}</span>
+        </a>
+        }
+    </mat-nav-list>
 </div>
